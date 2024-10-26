@@ -9,3 +9,13 @@ class Newspost(models.Model):
     text = models.TextField('Текст новости')
     pub_date = models.DateTimeField('Дата публикации')
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
+
+    # def __str__(self):
+    #     return self.title
